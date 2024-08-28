@@ -1,44 +1,26 @@
-# Avocado-Prices
-Analyze the prices of Avocado across regions, states, districts and other parameters 
-# Find the regions with the highest average avocado prices over the entire dataset.
-SELECT
-  region,
-  AVG(AveragePrice) AS average_price
-FROM `Avocado_Price.avocado_price` 
-GROUP BY region 
-ORDER BY average_price DESC 
-LIMIT 10;
+**Ask**
 
-#Find the years with the highest total avocado sales volume.
-SELECT
-  year,
-  SUM(TotalVolume) AS total_volume
-FROM `Avocado_Price.avocado_price`
-GROUP BY year
-ORDER BY total_volume DESC
-LIMIT 10;
+Five questions will guide your case study:
+1. What type of company does your client represent, and what are they asking you to accomplish?
+2. What are the key factors involved in the business task you are investigating?
+3. What type of data will be appropriate for your analysis?
+4. Where will you obtain that data?
+5. Who is your audience, and what materials will help you present to them?
 
-#Find the avocado types with the highest average price over the entire dataset.
-SELECT
-  type,
-  AVG(AveragePrice) AS average_price
-FROM `Avocado_Price.avocado_price`
-GROUP BY type
-ORDER BY average_price DESC
-LIMIT 10;
+You will produce a report with the following deliverables:
+1. A clear statement of the business task you have selected to investigate
+2. A description of all data sources used
+3. Documentation of any cleaning or manipulation of data
+4. A summary of your analysis
+5. Supporting visualizations and key findings
+6. Based on what you discover, a list of additional deliverables you think would be helpful to include for further exploration
+7. Your top high-level insights based on your analysis
 
-#What is the total volume of avocados sold in each region, grouped by type?
-SELECT region, type, SUM(TotalVolume) AS Total_Volume_Per_Region_Per_Type
-FROM `Avocado_Price.avocado_price`
-GROUP BY region, type;
+**Prepare**
 
-#What is the correlation between the average price and total volume of avocados sold in each region, grouped by year?
-SELECT region, year, CORR(AveragePrice, TotalVolume) AS Correlation_Price_Volume_Per_Region_Per_Year
-FROM `Avocado_Price.avocado_price`
-GROUP BY region, year;
-
-#Find the variance of the average price of avocados.
-SELECT
-  VAR_SAMP(AveragePrice) AS variance
-FROM
-  `Avocado_Price.avocado_price`;
+Find data that is appropriate for your analysis from any credible dataset. There are numerous public datasets that you can use. You
+have already encountered some of them throughout this program:
+1. World Happiness Report (made available by Sustainable Development Solutions Network under a CC0 license): Regional data about overall happiness that contains interesting insights into the relationship between happiness, money, health, and many other metrics.
+2. Avocado Prices (made available by Justin Kiggins under a CC0 license): Historical data about avocado prices and sales in grocery stores throughout the United States.
+3. Movies Dataset (made available by Rounak Banik under a CC0 license): Metadata about 45,000 movies, with data points including cast, crew, plot keywords, budget, revenue, ratings, release dates, languages, production companies, and more.
+4. Amazon Top 50 Best Selling Books (made available by Souter Saalu under a CC0 license): Data about Amazon's bestselling books from 2009 to 2019, categorized into fiction and nonfiction.
